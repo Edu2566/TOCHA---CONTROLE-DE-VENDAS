@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='/css/sideheader/tochaHeader.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='/css/vendaExtintores.css') }}">
+    <title>TOCHA - Registrar Venda</title>
+</head>
+<body>
+    <header>
+        <div id="menu">
+            <button id="sidebar_button"><i class="fa-solid fa-bars" id="sidebar_button_icon"></i></button>
+            <span>
+                <img src="{{ url_for('static', filename='images/sideheader/TOCHA-LOGO.png')}}" />
+            </span>
+        </div>
+    </header>
+
+    <nav id="sidebar">
+        <ul id="side-itens">
+            <li class="side-item">
+                <a href="#">
+                    <i class="fa-solid fa-calendar-check"></i>
+                    <span class="item-description">
+                        Vendas e Validade
+                    </span>
+                </a>
+            </li>
+            <li class="side-item">
+                <a href="{{url_for('cliente.cadastroCliente')}}">
+                    <i class="fa-solid fa-user-plus"></i>
+                    <span class="item-description">
+                        Cadastrar Cliente
+                    </span>
+                </a>
+            </li>
+            <li class="side-item">
+                <a href="#">
+                    <i class="fa-solid fa-boxes-stacked"></i>
+                    <span class="item-description">
+                        Estoque
+                    </span>
+                </a>
+            </li>
+            <li class="side-item active">
+                <a href="{{url_for('vendas.registrarVenda')}}">
+                    <i class="fa-solid fa-file-invoice-dollar"></i>
+                    <span class="item-description">
+                        Registrar Venda
+                    </span>
+                </a>
+            </li>
+        </ul>
+
+        <ul id="side-itens-footer">
+            <li class="side-item">
+                <a href="#">
+                    <i class="fa-solid fa-gear"></i>
+                    <span class="item-description">
+                        Configurações
+                    </span>
+                </a>
+            </li>  
+        </ul>
+    </nav>
+    <main>
+        <h1>INDEX</h1>
+    </main>
+    <script src="{{ url_for('static', filename='js/sideheader/sidebaranimation.js') }}"></script>
+</body>
+</html>

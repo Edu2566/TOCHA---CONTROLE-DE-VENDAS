@@ -1,0 +1,174 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* Inicio da estilização do Header */
+header {
+    position: fixed;
+    top: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    min-width: 100%;
+    height: 10vh;
+    background-color:#F5F5F5;
+    box-sizing: border-box;
+}
+
+#menu {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-left: 2vh;
+    min-width: 27vh;
+    max-width: 30vh;
+}
+
+#menu img {
+    max-width: 27vh;
+    object-fit: cover;
+}
+
+#menu button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 5vh;
+    color: #ff0000;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    max-width: 6vh;
+}
+
+#menu_profile {
+    max-width: 7vh;
+    display: flex;
+    margin-right: 4%;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+#menu_profile img {
+    max-width: 100%;
+    min-width: 40%;
+    border-radius: 32px;
+    height: auto;
+    object-fit: cover;
+    cursor: pointer;
+}
+/* Fim da estilização do Header */
+
+/* Inicio da estilização da Barra Lateral */
+#sidebar {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    width: 40vh;
+    height: 90vh;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    background-color: #F5F5F5;
+    overflow: auto;
+    transition: all .5s;
+}
+
+#side-itens {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    list-style: none;
+    font-size: 2.5vh;
+    width: 95%;
+    height: 80%;
+    overflow: hidden;
+    gap: 2%;
+}
+
+.side-item {
+    display: flex;
+    width: 90%;
+    border-radius: 8px;
+    cursor: pointer;
+    padding: 12px;
+    max-height: 6vh;
+}
+
+.side-item a {
+    display: flex;
+    width: 100%;
+    justify-content: flex-start;
+    align-items: center;
+    text-decoration: none;
+    color: #ff0000;
+}
+
+.side-item:hover:not(.active) {
+    background-color: white;
+}
+
+.side-item i {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 20%;
+    color:#ff0000;
+}
+
+.side-item span {
+    width: 80%;
+}
+
+.side-item.active {
+    background-color: #ff0000;
+}
+
+.side-item.active a i, .side-item.active a{
+    color: white;
+}
+
+.item-description {
+    display: flex;
+    justify-content: flex-start;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    transition: width .6s;
+}
+
+#side-itens-footer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex: 1;
+    width: 95%;
+    font-size: 2.5vh;
+    border-top: 2px solid white;
+    gap: 4%;
+}
+
+#sidebar.close-sidebar {
+    width: 8vh;
+}
+
+#sidebar.close-sidebar .item-description{
+    width: 0;
+    height: 0;
+}
+
+#sidebar.close-sidebar .side-item a{
+    text-align: center;
+    display: flex;
+    justify-content: center;
+}
+
+#sidebar.close-sidebar .side-item {
+    height: 6vh;
+}
+/* Fim da estilização da Barra Lateral */

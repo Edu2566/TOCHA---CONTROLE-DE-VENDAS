@@ -1,0 +1,129 @@
+#cadastroCliente_main {
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+    height: 90vh;
+    position: fixed;
+    width: calc(100% - 40vh);
+    bottom: 0;
+    right: 0;
+    transition: all .5s;
+}
+
+#cadastroCliente_main.close-sidebar {
+    width: calc(100% - 8vh);
+}
+
+#cliente-TOCHA {
+    display: flex;
+    align-items: center;
+    width: 90%;
+    height: 90%;
+    border-radius: 20px;
+    border: 2px solid #ff0000;
+}
+
+#cliente-espaco {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    width: 98%;
+    height: 98%;
+    gap: 5px;
+}
+
+#label-date {
+    width: 98%;
+}
+
+#data-clienteform {
+    width: 30%;
+}
+
+#label-clienteform {
+    width: 98%;
+}
+
+#cliente-clienteform{
+    width: 80%;
+}
+
+#linha-endereco {
+    display: flex;
+    gap: 10px;
+    width: 98%;
+}
+
+#label-endereco {
+    width: 60%;
+}
+
+#endereco-clienteform {
+    width: 70%;
+}
+
+#label-numero_endereco {
+    width: 30%;
+}
+
+#numero_endereco-clienteform {
+    width: 78%;
+}
+
+#linha-endereco2 {
+    display: flex;
+    width: 98%;
+}
+
+#label-cidade {
+    width: 40%;
+    display: flex;
+    align-items: center;
+}
+
+#cidade-clienteform {
+    width: 80%;
+}
+
+#label-cep {
+    width: 30%;
+}
+
+#cep-clienteform {
+    width: 80%;
+}
+
+#label-estado {
+    width: 30%;
+}
+
+#estado-clienteform {
+    width: 35%;
+}
+
+#linha-contato {
+    display: flex;
+    width: 98%;
+}
+
+#label-email {
+    width: 65%;
+}
+
+#email-clienteform {
+    width: 85%;
+}
+
+#linha-botao {
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+}
+
+#enviar-clienteform {
+    margin-top: 5%;
+    margin-right: 10%;
+    width: 15%;
+    height: 100%;
+}

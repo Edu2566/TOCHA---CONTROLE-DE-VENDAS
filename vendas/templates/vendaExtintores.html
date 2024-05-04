@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='/css/sideheader/tochaHeader.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='/css/vendaExtintores.css') }}">
+    <title>TOCHA - Registrar Venda</title>
+</head>
+<body>
+    <header>
+        <div id="menu">
+            <button id="sidebar_button"><i class="fa-solid fa-bars" id="sidebar_button_icon"></i></button>
+            <span>
+                <img src="{{ url_for('static', filename='images/sideheader/TOCHA-LOGO.png')}}" />
+            </span>
+        </div>
+    </header>
+
+    <nav id="sidebar">
+        <ul id="side-itens">
+            <li class="side-item">
+                <a href="#">
+                    <i class="fa-solid fa-calendar-check"></i>
+                    <span class="item-description">
+                        Vendas e Validade
+                    </span>
+                </a>
+            </li>
+            <li class="side-item">
+                <a href="{{url_for('cliente.cadastroCliente')}}">
+                    <i class="fa-solid fa-user-plus"></i>
+                    <span class="item-description">
+                        Cadastrar Cliente
+                    </span>
+                </a>
+            </li>
+            <li class="side-item">
+                <a href="#">
+                    <i class="fa-solid fa-boxes-stacked"></i>
+                    <span class="item-description">
+                        Estoque
+                    </span>
+                </a>
+            </li>
+            <li class="side-item active">
+                <a href="{{url_for('vendas.registrarVenda')}}">
+                    <i class="fa-solid fa-file-invoice-dollar"></i>
+                    <span class="item-description">
+                        Registrar Venda
+                    </span>
+                </a>
+            </li>
+        </ul>
+
+        <ul id="side-itens-footer">
+            <li class="side-item">
+                <a href="#">
+                    <i class="fa-solid fa-gear"></i>
+                    <span class="item-description">
+                        Configurações
+                    </span>
+                </a>
+            </li>  
+        </ul>
+    </nav>
+
+    <main id="vendaExtintores_main">
+        <div id="vendas-TOCHA">
+            <form method="POST" action="" id="vendas-espaco"></form>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Quantidade</th>
+                        <th>Descrição</th>
+                        <th>Preço Unitário</th>
+                        <th>Total</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><input type="number" name="quantidade1" min="0" value="0"></td>
+                        <td>Extintor PQS 1kg</td>
+                        <td><input type="text" name="precoUnitario1"></td>
+                        <td><input type="text" name="total1" readonly></td>
+                    </tr>
+                    <tr>
+                        <td><input type="number" name="quantidade2" min="0" value="0"></td>
+                        <td>Extintor ABC <input type="text" name="pesoABC" placeholder="kg"></td>
+                        <td><input type="text" name="precoUnitario2"></td>
+                        <td><input type="text" name="total2" readonly></td>
+                    </tr>
+                    <tr>
+                        <td><input type="number" name="quantidade3" min="0" value="0"></td>
+                        <td>Extintor PQS 4kg</td>
+                        <td><input type="text" name="precoUnitario3"></td>
+                        <td><input type="text" name="total3" readonly></td>
+                    </tr>
+                    <tr>
+                        <td><input type="number" name="quantidade4" min="0" value="0"></td>
+                        <td>Extintor PQS 6kg</td>
+                        <td><input type="text" name="precoUnitario4"></td>
+                        <td><input type="text" name="total4" readonly></td>
+                    </tr>
+                    <tr>
+                        <td><input type="number" name="quantidade5" min="0" value="0"></td>
+                        <td>Extintor PQS 8kg</td>
+                        <td><input type="text" name="precoUnitario5"></td>
+                        <td><input type="text" name="total5" readonly></td>
+                    </tr>
+                    <tr>
+                        <td><input type="number" name="quantidade6" min="0" value="0"></td>
+                        <td>Extintor PQS 12kg</td>
+                        <td><input type="text" name="precoUnitario6"></td>
+                        <td><input type="text" name="total6" readonly></td>
+                    </tr>
+                    <tr>
+                        <td><input type="number" name="quantidade7" min="0" value="0"></td>
+                        <td>Extintor AP 10Lts</td>
+                        <td><input type="text" name="precoUnitario7"></td>
+                        <td><input type="text" name="total7" readonly></td>
+                    </tr>
+                    <tr>
+                        <td><input type="number" name="quantidade8" min="0" value="0"></td>
+                        <td>Extintor CO2 4kg</td>
+                        <td><input type="text" name="precoUnitario8"></td>
+                        <td><input type="text" name="total8" readonly></td>
+                    </tr>
+                    <tr>
+                        <td><input type="number" name="quantidade9" min="0" value="0"></td>
+                        <td>Extintor CO2 6kg</td>
+                        <td><input type="text" name="precoUnitario9"></td>
+                        <td><input type="text" name="total9" readonly></td>
+                    </tr>
+                    <tr>
+                        <td><input type="number" name="quantidade10" min="0" value="0"></td>
+                        <td>Placa</td>
+                        <td><input type="text" name="precoUnitario10"></td>
+                        <td><input type="text" name="total10" readonly></td>
+                    </tr>
+                    <tr>
+                        <td><input type="number" name="quantidade11" min="0" value="0"></td>
+                        <td>Suporte</td>
+                        <td><input type="text" name="precoUnitario11"></td>
+                        <td><input type="text" name="total11" readonly></td>
+                    </tr>
+                    <tr>
+                        <td><input type="number" name="quantidade12" min="0" value="0"></td>
+                        <td>Teste Hidrostático em mangueiras</td>
+                        <td><input type="text" name="precoUnitario12"></td>
+                        <td><input type="text" name="total12" readonly></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </main>
+    
+    <script src="{{ url_for('static', filename='js/sideheader/sidebaranimation.js') }}"></script>
+</body>
+</html>
