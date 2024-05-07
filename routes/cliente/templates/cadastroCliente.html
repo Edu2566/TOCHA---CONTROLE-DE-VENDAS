@@ -21,7 +21,7 @@
     <nav id="sidebar">
         <ul id="side-itens">
             <li class="side-item">
-                <a href="#">
+                <a href="{{url_for('vendas.vendasValidade')}}">
                     <i class="fa-solid fa-calendar-check"></i>
                     <span class="item-description">
                         Vendas e Validade
@@ -68,42 +68,43 @@
 
     <main id="cadastroCliente_main">
         <div id="cliente-TOCHA">
-            <form method="POST" action="" id="cliente-espaco">
+            <form method="POST" action="{{url_for('cliente.cadastrarCliente')}}" id="cliente-espaco">
+                
                 <label for="date-clienteform" id="label-date">
                     <span>Data:</span>
-                    <input type="date" id="date-clienteform" class="input-clienteform"/>
+                    <input type="date" id="date-clienteform" class="input-clienteform" name="date-clienteform" />
                 </label>
 
                 <label for="cliente-clienteform" id="label-clienteform">
                     <span>Cliente:</span>
-                    <input type="text" id="cliente-clienteform" class="input-clienteform"/>
+                    <input type="text" id="cliente-clienteform" class="input-clienteform" name="cliente-clienteform"/>
                 </label>
 
                 <div id="linha-endereco">
                     <label for="endereco-clienteform" id="label-endereco">
                         <span>Endereço:</span>
-                        <input type="text"  id="endereco-clienteform" class="input-clienteform"/>
+                        <input type="text"  id="endereco-clienteform" class="input-clienteform" name="endereco-clienteform"/>
                     </label>
                     <label for="numero_endereco-clienteform" id="label-numero_endereco">
                         <span>N°:</span>
-                        <input type="text"  id="numero_endereco-clienteform" class="input-clienteform"/>
+                        <input type="text"  id="numero_endereco-clienteform" class="input-clienteform" name="numero_endereco-clienteform"/>
                     </label>
                 </div>
 
                 <div id="linha-endereco2">
                     <label for="cidade-clienteform" id="label-cidade">
                         <span>Cidade:</span>
-                        <input type="text" id="cidade-clienteform" />
+                        <input type="text" id="cidade-clienteform" name="cidade-clienteform" />
                     </label>
 
                     <label for="cep-clienteform" id="label-cep">
                         <span>CEP:</span>
-                        <input type="text" id="cep-clienteform" />
+                        <input type="text" id="cep-clienteform" name="cep-clienteform"/>
                     </label>
 
                     <label for="estado-clienteform" id="label-estado">
                         <span>Estado:</span>
-                        <select name="estado-clienteform" id="estado-clienteform" class="input-clienteform">
+                        <select name="estado-clienteform" id="estado-clienteform" class="input-clienteform" name="estado-clienteform">
                             <option value="">Selecione...</option>
                             <option value="AC">AC</option>
                             <option value="AL">AL</option>
@@ -141,19 +142,19 @@
                         <span>
                             E-Mail:
                         </span>
-                        <input type="email" id="email-clienteform" class="input-clienteform" />
+                        <input type="email" id="email-clienteform" class="input-clienteform" name="email-clienteform"/>
                     </label>
 
                     <label for="fone-clienteform" id="label-fone">
                         <span>
                             Fone:
                         </span>
-                        <input type="tel" id="fone-clienteform" class="input-clienteform" />
+                        <input type="tel" id="fone-clienteform" class="input-clienteform" name="fone-clienteform"/>
                     </label>
                 </div>
 
                 <div id="linha-botao">
-                    <input type="submit" value="Enviar" id="enviar-clienteform" class="input-clienteform" />
+                    <input type="submit" value="Enviar" id="enviar-clienteform" class="input-clienteform"/>
                 </div>
             </form>
         </div>

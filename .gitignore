@@ -1,5 +1,12 @@
 TOCHA/
 
-cliente/__pycache__/
+__pycache__/
 
-vendas/__pycache__/
+routes/cliente/__pycache__/
+
+routes/vendas/__pycache__/
+
+database/__pycache__/
+apoio.txt
+
+.env

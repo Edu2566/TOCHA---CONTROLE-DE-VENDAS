@@ -21,7 +21,7 @@
     <nav id="sidebar">
         <ul id="side-itens">
             <li class="side-item">
-                <a href="#">
+                <a href="{{url_for('vendas.vendasValidade')}}">
                     <i class="fa-solid fa-calendar-check"></i>
                     <span class="item-description">
                         Vendas e Validade
@@ -69,6 +69,14 @@
     <main id="vendaExtintores_main">
         <div id="vendas-TOCHA">
             <form method="POST" action="" id="vendas-espaco"></form>
+            <div id="select-cliente-div">
+                <label for="select-cliente">
+                    Cliente:
+                    <select name="select-cliente" id="select-cliente">
+                        <option>Selecione...</option>
+                    </select>
+                </label>
+            </div>
             <table>
                 <thead>
                     <tr>
