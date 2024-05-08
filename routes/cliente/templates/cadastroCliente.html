@@ -2,6 +2,7 @@
 <html lang="pt-br">
 <head>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="{{ url_for('static', filename='/css/sideheader/tochaHeader.css') }}">
@@ -28,6 +29,22 @@
                     </span>
                 </a>
             </li>
+            <li class="side-item">
+                <a href="{{url_for('vendas.registrarVenda')}}">
+                    <i class="fa-solid fa-file-invoice-dollar"></i>
+                    <span class="item-description">
+                        Registrar Venda
+                    </span>
+                </a>
+            </li>
+            <li class="side-item">
+                <a href="{{url_for('cliente.listaClientes')}}">
+                    <i class="fa-solid fa-users"></i>
+                    <span class="item-description">
+                        Clientes
+                    </span>
+                </a>
+            </li>
             <li class="side-item active">
                 <a href="{{url_for('cliente.cadastroCliente')}}">
                     <i class="fa-solid fa-user-plus"></i>
@@ -41,14 +58,6 @@
                     <i class="fa-solid fa-boxes-stacked"></i>
                     <span class="item-description">
                         Estoque
-                    </span>
-                </a>
-            </li>
-            <li class="side-item">
-                <a href="{{url_for('vendas.registrarVenda')}}">
-                    <i class="fa-solid fa-file-invoice-dollar"></i>
-                    <span class="item-description">
-                        Registrar Venda
                     </span>
                 </a>
             </li>
@@ -69,42 +78,36 @@
     <main id="cadastroCliente_main">
         <div id="cliente-TOCHA">
             <form method="POST" action="{{url_for('cliente.cadastrarCliente')}}" id="cliente-espaco">
-                
-                <label for="date-clienteform" id="label-date">
-                    <span>Data:</span>
-                    <input type="date" id="date-clienteform" class="input-clienteform" name="date-clienteform" />
-                </label>
-
                 <label for="cliente-clienteform" id="label-clienteform">
                     <span>Cliente:</span>
-                    <input type="text" id="cliente-clienteform" class="input-clienteform" name="cliente-clienteform"/>
+                    <input type="text" id="cliente-clienteform" class="input-clienteform" name="cliente-clienteform" autocomplete="off" required/>
                 </label>
 
                 <div id="linha-endereco">
                     <label for="endereco-clienteform" id="label-endereco">
                         <span>Endereço:</span>
-                        <input type="text"  id="endereco-clienteform" class="input-clienteform" name="endereco-clienteform"/>
+                        <input type="text"  id="endereco-clienteform" class="input-clienteform" name="endereco-clienteform" autocomplete="off" required/>
                     </label>
                     <label for="numero_endereco-clienteform" id="label-numero_endereco">
                         <span>N°:</span>
-                        <input type="text"  id="numero_endereco-clienteform" class="input-clienteform" name="numero_endereco-clienteform"/>
+                        <input type="text"  id="numero_endereco-clienteform" class="input-clienteform" name="numero_endereco-clienteform" autocomplete="off" required/>
                     </label>
                 </div>
 
                 <div id="linha-endereco2">
                     <label for="cidade-clienteform" id="label-cidade">
                         <span>Cidade:</span>
-                        <input type="text" id="cidade-clienteform" name="cidade-clienteform" />
+                        <input type="text" id="cidade-clienteform" name="cidade-clienteform" autocomplete="off" class="input-clienteform" required/>
                     </label>
 
                     <label for="cep-clienteform" id="label-cep">
                         <span>CEP:</span>
-                        <input type="text" id="cep-clienteform" name="cep-clienteform"/>
+                        <input type="text" id="cep-clienteform" name="cep-clienteform" autocomplete="off" class="input-clienteform" placeholder="00000-000" data-mask="00000-000" required/>
                     </label>
 
                     <label for="estado-clienteform" id="label-estado">
                         <span>Estado:</span>
-                        <select name="estado-clienteform" id="estado-clienteform" class="input-clienteform" name="estado-clienteform">
+                        <select name="estado-clienteform" id="estado-clienteform" class="input-clienteform" name="estado-clienteform" required>
                             <option value="">Selecione...</option>
                             <option value="AC">AC</option>
                             <option value="AL">AL</option>
@@ -136,23 +139,26 @@
                         </select>
                     </label>
                 </div>
-
+                <br>
+                <label for="documento-clienteform" id="label-documento">
+                    <select class="input-clienteform">
+                        <option>CPF</option>
+                        <option>CNPJ</option>
+                    </select>
+                    <span><input type="text" id="documento-clienteform" name="documento-clienteform" class="input-clienteform" autocomplete="off" required/></span>
+                </label>
                 <div id="linha-contato">
                     <label for="email-clienteform" id="label-email">
-                        <span>
-                            E-Mail:
-                        </span>
-                        <input type="email" id="email-clienteform" class="input-clienteform" name="email-clienteform"/>
+                        <span>E-Mail:</span>
+                        <input type="email" id="email-clienteform" class="input-clienteform" name="email-clienteform" autocomplete="off" required/>
                     </label>
 
                     <label for="fone-clienteform" id="label-fone">
-                        <span>
-                            Fone:
-                        </span>
-                        <input type="tel" id="fone-clienteform" class="input-clienteform" name="fone-clienteform"/>
+                        <span>Fone:</span>
+                        <input type="tel" id="fone-clienteform" class="input-clienteform" name="fone-clienteform" autocomplete="off" inputmode="tel" placeholder="(00) 00000-0000" data-mask="(00) 00000-0000"/>
                     </label>
                 </div>
-
+                <br>
                 <div id="linha-botao">
                     <input type="submit" value="Enviar" id="enviar-clienteform" class="input-clienteform"/>
                 </div>
@@ -161,5 +167,13 @@
     </main>
     
 <script src="{{ url_for('static', filename='js/sideheader/sidebaranimation.js') }}"></script>
+
+<!--Importações jQuery-->
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+<!--Input Mask-->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.16/jquery.mask.js"></script>
+<!--Configurção do Input de Datas e N°-->
+<script src="{{ url_for('static', filename='js/cadastroCliente/input-ruler.js') }}"></script>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
 </body>
 </html>

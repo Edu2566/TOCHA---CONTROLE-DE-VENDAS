@@ -1,3 +1,7 @@
+main {
+    background-color: #FAF0E6;
+}
+
 #cadastroCliente_main {
     align-items: center;
     justify-content: center;
@@ -15,115 +19,92 @@
     width: calc(100% - 8vh);
 }
 
-#cliente-TOCHA {
-    display: flex;
-    align-items: center;
-    width: 90%;
-    height: 90%;
-    border-radius: 20px;
-    border: 2px solid #ff0000;
+.input-clienteform {
+    width: 100%; 
+    box-sizing: border-box; 
+    padding: 10px; 
+    font-size: 16px; 
+    border: 1px solid #ccc; 
+    border-radius: 4px;
 }
 
-#cliente-espaco {
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    width: 98%;
-    height: 98%;
-    gap: 5px;
+main input:focus {
+    outline: none;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
 }
 
-#label-date {
-    width: 98%;
-}
-
-#data-clienteform {
-    width: 30%;
-}
-
-#label-clienteform {
-    width: 98%;
-}
-
-#cliente-clienteform{
-    width: 80%;
+main select:focus {
+    outline: none;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
 }
 
 #linha-endereco {
-    display: flex;
+    display: grid;
     gap: 10px;
-    width: 98%;
-}
-
-#label-endereco {
-    width: 60%;
-}
-
-#endereco-clienteform {
-    width: 70%;
-}
-
-#label-numero_endereco {
-    width: 30%;
-}
-
-#numero_endereco-clienteform {
-    width: 78%;
+    grid-template-columns: 2fr 1fr; /* Divide a linha em duas colunas */
 }
 
 #linha-endereco2 {
-    display: flex;
-    width: 98%;
-}
-
-#label-cidade {
-    width: 40%;
-    display: flex;
-    align-items: center;
-}
-
-#cidade-clienteform {
-    width: 80%;
-}
-
-#label-cep {
-    width: 30%;
-}
-
-#cep-clienteform {
-    width: 80%;
-}
-
-#label-estado {
-    width: 30%;
-}
-
-#estado-clienteform {
-    width: 35%;
+    display: grid;
+    gap: 10px;
+    grid-template-columns: 2fr 1fr 1fr; /* Divide a linha em três colunas */
 }
 
 #linha-contato {
-    display: flex;
-    width: 98%;
-}
-
-#label-email {
-    width: 65%;
-}
-
-#email-clienteform {
-    width: 85%;
+    display: grid;
+    gap: 10px;
+    grid-template-columns: 2fr 1fr; /* Divide a linha em duas colunas */
 }
 
 #linha-botao {
-    width: 100%;
-    display: flex;
-    justify-content: flex-end;
+    text-align: center; /* Centraliza o botão */
 }
 
-#enviar-clienteform {
-    margin-top: 5%;
-    margin-right: 10%;
-    width: 15%;
-    height: 100%;
+/* Estilos específicos para labels e spans */
+
+main label {
+    display: flex;
+    flex-direction: column;
 }
+
+main span {
+    margin-bottom: 5px;
+}
+
+/* Estilo para o botão */
+
+#enviar-clienteform {
+    width: 100%; /* O botão ocupará toda a largura disponível */
+    padding: 10px;
+    background-color: #ff0000; /* Cor de fundo azul */
+    color: #fff; /* Cor do texto branco */
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#enviar-clienteform:hover {
+    background-color: #e42424; /* Cor de fundo mais escura ao passar o mouse */
+}
+
+/* Estilos adicionados para o elemento dentro da label #label-documento */
+
+#label-documento {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: space-between;
+    width: 100%;
+}
+
+#label-documento select {
+    width: 10%;
+}
+
+#label-documento span{
+    width: 88%; /* Ocupa 30% da largura disponível */
+    margin-right: 10px; /* Espaçamento à direita para separar do input */
+}
+
+
