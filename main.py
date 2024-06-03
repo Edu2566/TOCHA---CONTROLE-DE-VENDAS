@@ -3,7 +3,7 @@ from routes.cliente.cliente import cliente_blueprint
 from routes.vendas.vendas import vendas_blueprint
 from database.database import configure_db
 
-app = Flask(__name__)
+app = Flask(__name__, static_folder='static', static_url_path='/static')
 
 configure_db(app)
 

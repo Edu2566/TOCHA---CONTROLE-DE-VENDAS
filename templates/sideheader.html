@@ -5,8 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="{{ url_for('static', filename='/css/sideheader/tochaHeader.css') }}">
-    <link rel="stylesheet" href="{{ url_for('static', filename='/css/vendaExtintores.css') }}">
-    <title>TOCHA - Registrar Venda</title>
+    {% block stylepage %}{% endblock %}
+    <title>{% block titlepage %}{% endblock %}</title>
 </head>
 <body>
     <header>
@@ -20,31 +20,15 @@
 
     <nav id="sidebar">
         <ul id="side-itens">
-            <li class="side-item">
-                <a href="#">
+            <li class="side-item {% block classactivevendasvalidade %}{% endblock %}">
+                <a href="{{url_for('vendas.vendasValidade')}}">
                     <i class="fa-solid fa-calendar-check"></i>
                     <span class="item-description">
                         Vendas e Validade
                     </span>
                 </a>
             </li>
-            <li class="side-item">
-                <a href="{{url_for('cliente.cadastroCliente')}}">
-                    <i class="fa-solid fa-user-plus"></i>
-                    <span class="item-description">
-                        Cadastrar Cliente
-                    </span>
-                </a>
-            </li>
-            <li class="side-item">
-                <a href="#">
-                    <i class="fa-solid fa-boxes-stacked"></i>
-                    <span class="item-description">
-                        Estoque
-                    </span>
-                </a>
-            </li>
-            <li class="side-item active">
+                <li class="side-item {% block classactiveregistrarvendas %}{% endblock %}">
                 <a href="{{url_for('vendas.registrarVenda')}}">
                     <i class="fa-solid fa-file-invoice-dollar"></i>
                     <span class="item-description">
@@ -52,10 +36,34 @@
                     </span>
                 </a>
             </li>
+            <li class="side-item {% block classactivelistaclientes %}{% endblock %}">
+                <a href="{{url_for('cliente.listaClientes')}}">
+                    <i class="fa-solid fa-users"></i>
+                    <span class="item-description">
+                        Clientes
+                    </span>
+                </a>
+            </li>
+            <li class="side-item {% block classactivecadastrocliente %}{% endblock %}">
+                <a href="{{url_for('cliente.cadastroCliente')}}">
+                    <i class="fa-solid fa-user-plus"></i>
+                    <span class="item-description">
+                        Cadastrar Cliente
+                    </span>
+                </a>
+            </li>
+            <li class="side-item {% block classactiveestoque %}{% endblock %}">
+                <a href="#">
+                    <i class="fa-solid fa-boxes-stacked"></i>
+                    <span class="item-description">
+                        Estoque
+                    </span>
+                </a>
+            </li>
         </ul>
 
         <ul id="side-itens-footer">
-            <li class="side-item">
+            <li class="side-item {% block classactiveconfiguracoes %}{% endblock %}">
                 <a href="#">
                     <i class="fa-solid fa-gear"></i>
                     <span class="item-description">
@@ -65,9 +73,7 @@
             </li>  
         </ul>
     </nav>
-    <main>
-        <h1>INDEX</h1>
-    </main>
+    {% block main %}{% endblock %}
     <script src="{{ url_for('static', filename='js/sideheader/sidebaranimation.js') }}"></script>
 </body>
 </html>

@@ -1,13 +1,12 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="en">
 <head>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="{{ url_for('static', filename='/css/sideheader/tochaHeader.css') }}">
-    <link rel="stylesheet" href="{{ url_for('cliente.static', filename='/css/listaClientes.css') }}">
-    <title>TOCHA - Cadastro Cliente</title>
+    <script src="{{ url_for('static', filename='js/sideheader/sidebaranimation.js') }}"></script>
+    <script src="{{ url_for('cliente.static', filename='js/cliente/detalhes-cliente.js') }}"></script>
+    <title>TOCHA - Dados</title>
 </head>
 <body>
     <header>
@@ -37,7 +36,7 @@
                     </span>
                 </a>
             </li>
-            <li class="side-item active">
+            <li class="side-item">
                 <a href="{{url_for('cliente.listaClientes')}}">
                     <i class="fa-solid fa-users"></i>
                     <span class="item-description">
@@ -45,7 +44,7 @@
                     </span>
                 </a>
             </li>
-            <li class="side-item">
+            <li class="side-item active">
                 <a href="{{url_for('cliente.cadastroCliente')}}">
                     <i class="fa-solid fa-user-plus"></i>
                     <span class="item-description">
@@ -74,8 +73,8 @@
             </li>  
         </ul>
     </nav>
-    <main>
-
+    <main id="dados_main">
+        
     </main>
 </body>
 </html>

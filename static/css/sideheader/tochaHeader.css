@@ -172,3 +172,23 @@ header {
     height: 6vh;
 }
 /* Fim da estilização da Barra Lateral */
+
+/* Inicio da estilização da Área Principal */
+#vendasValidade_main, #vendaExtintores_main {
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+    height: 90vh;
+    position: fixed;
+    width: calc(100% - 40vh);
+    bottom: 0;
+    right: 0;
+    transition: all .5s;
+    border: 1px solid black;
+}
+
+#vendasValidade_main.close-sidebar, #vendaExtintores_main.close-sidebar {
+    width: calc(100% - 8vh);
+}
+/* Fim da estilização da Barra Lateral */

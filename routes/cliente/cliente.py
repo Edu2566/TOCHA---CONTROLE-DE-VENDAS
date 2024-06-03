@@ -6,7 +6,7 @@ from database.dataValidation.inputValidation import *
 
 load_dotenv()
 
-cliente_blueprint = Blueprint('cliente', __name__, template_folder='templates')
+cliente_blueprint = Blueprint('cliente', __name__, template_folder='templates', static_folder='static-cliente')
 
 mysql = MySQL()
 
