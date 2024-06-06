@@ -1,0 +1,73 @@
+#listaClientes_main {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    height: 90vh;
+    position: fixed;
+    width: calc(100% - 40vh);
+    bottom: 0;
+    right: 0;
+    transition: all .5s;
+    border: 1px solid black;
+}
+
+#listaClientes_main.close-sidebar {
+    width: calc(100% - 8vh);
+}
+
+h1 {
+    text-align: center;
+    margin-top: 20px;
+    color: #333;
+}
+
+table {
+    cursor: default;
+    width: 80%;
+    margin: 20px auto;
+    border-collapse: separate;
+    border-spacing: 0 10px; /* Espaçamento entre as linhas */
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border: none; /* Remove a borda da tabela */
+}
+
+th, td {
+    padding: 12px;
+    text-align: center;
+    background-color: #FFE4C4;
+    
+}
+
+th {
+    background-color: red;
+    color: white;
+}
+
+tr:nth-child(even) td {
+    background-color: #FFFACD;
+}
+
+tr:nth-child(odd) {
+    background-color: #FAFAD2; /* Cor para linhas ímpares */
+}
+
+thead {
+    background-color: #007bff;
+    color: #fff;
+}
+
+.list-btn {
+    background-color: red;
+    color: white;
+    border: none;
+    padding: 8px;
+    border-radius: 10px;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.list-btn:hover {
+    background-color: #e42424;
+}
+

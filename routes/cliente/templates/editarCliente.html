@@ -1,0 +1,107 @@
+{% extends "sideheader.html" %}
+
+{% block stylepage %}<link rel="stylesheet" href="{{ url_for('cliente.static', filename='/css/editarCliente.css') }}">{% endblock %}
+
+{% block classactivelistaclientes %}active{% endblock %}
+{% block main %}
+<main id="editarCliente_main">
+    <div id="cliente-TOCHA">
+        <form method="POST" action="{{ url_for('cliente.atualizarCliente', id=cliente[0]) }}" id="cliente-espaco">
+            <label for="cliente-clienteform" id="label-clienteform">
+                <span>Cliente:</span>
+                <input type="text" id="cliente-clienteform" class="input-clienteform" name="cliente-clienteform" autocomplete="off" value="{{ cliente[1] }}" required/>
+            </label>
+
+            <div id="linha-endereco">
+                <label for="endereco-clienteform" id="label-endereco">
+                    <span>Endereço:</span>
+                    <input type="text"  id="endereco-clienteform" class="input-clienteform" name="endereco-clienteform" autocomplete="off" value="{{ cliente[2] }}" required/>
+                </label>
+                <label for="numero_endereco-clienteform" id="label-numero_endereco">
+                    <span>N°:</span>
+                    <input type="text"  id="numero_endereco-clienteform" class="input-clienteform" name="numero_endereco-clienteform" autocomplete="off" value="{{ cliente[3] }}" required/>
+                </label>
+            </div>
+
+            <div id="linha-endereco2">
+                <label for="cidade-clienteform" id="label-cidade">
+                    <span>Cidade:</span>
+                    <input type="text" id="cidade-clienteform" name="cidade-clienteform" autocomplete="off" class="input-clienteform" value="{{ cliente[4] }}" required/>
+                </label>
+
+                <label for="cep-clienteform" id="label-cep">
+                    <span>CEP:</span>
+                    <input type="text" id="cep-clienteform" name="cep-clienteform" autocomplete="off" class="input-clienteform" placeholder="00000-000" data-mask="00000-000" value="{{ cliente[5] }}" required/>
+                </label>
+
+                <label for="estado-clienteform" id="label-estado">
+                    <span>Estado:</span>
+                    <select name="estado-clienteform" id="estado-clienteform" class="input-clienteform" name="estado-clienteform" value="{{ cliente[6] }}" required>
+                        <option value="">Selecione...</option>
+                        <option value="AC" {% if cliente[6] == 'AC' %}selected{% endif %}>AC</option>
+                        <option value="AL" {% if cliente[6] == 'AL' %}selected{% endif %}>AL</option>
+                        <option value="AP" {% if cliente[6] == 'AP' %}selected{% endif %}>AP</option>
+                        <option value="AM" {% if cliente[6] == 'AM' %}selected{% endif %}>AM</option>
+                        <option value="BA" {% if cliente[6] == 'BA' %}selected{% endif %}>BA</option>
+                        <option value="CE" {% if cliente[6] == 'CE' %}selected{% endif %}>CE</option>
+                        <option value="DF" {% if cliente[6] == 'DF' %}selected{% endif %}>DF</option>
+                        <option value="ES" {% if cliente[6] == 'ES' %}selected{% endif %}>ES</option>
+                        <option value="GO" {% if cliente[6] == 'GO' %}selected{% endif %}>GO</option>
+                        <option value="MA" {% if cliente[6] == 'MA' %}selected{% endif %}>MA</option>
+                        <option value="MT" {% if cliente[6] == 'MT' %}selected{% endif %}>MT</option>
+                        <option value="MS" {% if cliente[6] == 'MS' %}selected{% endif %}>MS</option>
+                        <option value="MG" {% if cliente[6] == 'MG' %}selected{% endif %}>MG</option>
+                        <option value="PA" {% if cliente[6] == 'PA' %}selected{% endif %}>PA</option>
+                        <option value="PB" {% if cliente[6] == 'PB' %}selected{% endif %}>PB</option>
+                        <option value="PR" {% if cliente[6] == 'PR' %}selected{% endif %}>PR</option>
+                        <option value="PE" {% if cliente[6] == 'PE' %}selected{% endif %}>PE</option>
+                        <option value="PI" {% if cliente[6] == 'PI' %}selected{% endif %}>PI</option>
+                        <option value="RJ" {% if cliente[6] == 'RJ' %}selected{% endif %}>RJ</option>
+                        <option value="RN" {% if cliente[6] == 'RN' %}selected{% endif %}>RN</option>
+                        <option value="RS" {% if cliente[6] == 'RS' %}selected{% endif %}>RS</option>
+                        <option value="RO" {% if cliente[6] == 'RO' %}selected{% endif %}>RO</option>
+                        <option value="RR" {% if cliente[6] == 'RR' %}selected{% endif %}>RR</option>
+                        <option value="SC" {% if cliente[6] == 'SC' %}selected{% endif %}>SC</option>
+                        <option value="SP" {% if cliente[6] == 'SP' %}selected{% endif %}>SP</option>
+                        <option value="SE" {% if cliente[6] == 'SE' %}selected{% endif %}>SE</option>
+                        <option value="TO" {% if cliente[6] == 'TO' %}selected{% endif %}>TO</option>
+                    </select>
+                </label>
+            </div>
+            <br>
+            <label for="documento-clienteform" id="label-documento">
+                <select class="input-clienteform">
+                    <option>CPF</option>
+                    <option>CNPJ</option>
+                </select>
+                <span><input type="text" id="documento-clienteform" name="documento-clienteform" class="input-clienteform" autocomplete="off" value="{{ cliente[7] }}" required/></span>
+            </label>
+            <div id="linha-contato">
+                <label for="email-clienteform" id="label-email">
+                    <span>E-Mail:</span>
+                    <input type="email" id="email-clienteform" class="input-clienteform" name="email-clienteform" autocomplete="off" value="{{ cliente[8] }}" required/>
+                </label>
+
+                <label for="fone-clienteform" id="label-fone">
+                    <span>Fone:</span>
+                    <input type="tel" id="fone-clienteform" class="input-clienteform" name="fone-clienteform" autocomplete="off" inputmode="tel" placeholder="(00) 00000-0000" data-mask="(00) 00000-0000" value="{{ cliente[9] }}" />
+                </label>
+            </div>
+            <br>
+            <div id="linha-botao">
+                <input type="submit" value="Salvar" id="enviar-clienteform" class="input-clienteform"/>
+                <a href="{{url_for('cliente.listaClientes')}}" id="voltar-clienteform">Voltar</a>
+            </div>
+        </form>
+    </div>
+</main>
+{% endblock %}
+{% block scripts %}
+<!--Importações jQuery-->
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+<!--Input Mask-->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.16/jquery.mask.js"></script>
+<!--Configurção do Input de Datas e N°-->
+<script src="{{ url_for('static', filename='js/cadastroCliente/input-ruler.js') }}"></script>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
+{% endblock %}

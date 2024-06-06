@@ -60,6 +60,14 @@
                     </span>
                 </a>
             </li>
+            <li class="side-item {% block classactivecadastrarproduto %}{% endblock %}">
+                <a href="#">
+                    <i class="fa-solid fa-boxes-packing"></i>
+                    <span class="item-description">
+                        Cadastrar Produto
+                    </span>
+                </a>
+            </li>
         </ul>
 
         <ul id="side-itens-footer">
@@ -75,5 +83,7 @@
     </nav>
     {% block main %}{% endblock %}
     <script src="{{ url_for('static', filename='js/sideheader/sidebaranimation.js') }}"></script>
+    {% block scripts %}
+    {% endblock %}
 </body>
 </html>

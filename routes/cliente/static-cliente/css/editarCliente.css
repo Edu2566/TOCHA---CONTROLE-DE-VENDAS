@@ -1,0 +1,133 @@
+main {
+    background-color: #FAF0E6;
+}
+
+#editarCliente_main {
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+    height: 90vh;
+    position: fixed;
+    width: calc(100% - 40vh);
+    bottom: 0;
+    right: 0;
+    transition: all .5s;
+}
+
+#editarCliente_main.close-sidebar {
+    width: calc(100% - 8vh);
+}
+
+.input-clienteform {
+    width: 100%; 
+    box-sizing: border-box; 
+    padding: 10px; 
+    font-size: 16px; 
+    border: 1px solid #ccc; 
+    border-radius: 4px;
+}
+
+main input:focus {
+    outline: none;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+
+main select:focus {
+    outline: none;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+
+#linha-endereco {
+    display: grid;
+    gap: 10px;
+    grid-template-columns: 2fr 1fr; /* Divide a linha em duas colunas */
+}
+
+#linha-endereco2 {
+    display: grid;
+    gap: 10px;
+    grid-template-columns: 2fr 1fr 1fr; /* Divide a linha em três colunas */
+}
+
+#linha-contato {
+    display: grid;
+    gap: 10px;
+    grid-template-columns: 2fr 1fr; /* Divide a linha em duas colunas */
+}
+
+#linha-botao {
+    text-align: center; /* Centraliza o botão */
+}
+
+/* Estilos específicos para labels e spans */
+
+main label {
+    display: flex;
+    flex-direction: column;
+}
+
+main span {
+    margin-bottom: 5px;
+}
+
+/* Estilo para o botão */
+
+#linha-botao {
+    display: flex;
+    justify-content: space-between;
+    cursor: default;
+}
+
+#enviar-clienteform {
+    width: 70%; /* O botão ocupará toda a largura disponível */
+    padding: 10px;
+    background-color: #ff0000; /* Cor de fundo azul */
+    color: #fff; /* Cor do texto branco */
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background-color 0.3s ease;
+}
+
+#enviar-clienteform:hover {
+    background-color: #e42424; /* Cor de fundo mais escura ao passar o mouse */
+}
+
+#voltar-clienteform {
+    width: 20%; /* O botão ocupará toda a largura disponível */
+    padding: 10px;
+    background-color: #ff0000; /* Cor de fundo azul */
+    color: #fff; /* Cor do texto branco */
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+    font-size: 14px;
+}
+
+#voltar-clienteform:hover {
+    background-color: #e42424; /* Cor de fundo mais escura ao passar o mouse */
+}
+/* Estilos adicionados para o elemento dentro da label #label-documento */
+
+#label-documento {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: space-between;
+    width: 100%;
+}
+
+#label-documento select {
+    width: 10%;
+}
+
+#label-documento span{
+    width: 88%; /* Ocupa 30% da largura disponível */
+    margin-right: 10px; /* Espaçamento à direita para separar do input */
+}
+
+
