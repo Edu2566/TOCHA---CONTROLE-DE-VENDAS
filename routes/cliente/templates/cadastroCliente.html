@@ -36,7 +36,7 @@
 
                     <label for="estado-clienteform" id="label-estado">
                         <span>Estado:</span>
-                        <select name="estado-clienteform" id="estado-clienteform" class="input-clienteform" name="estado-clienteform" required>
+                        <select name="estado-clienteform" id="estado-clienteform" class="input-clienteform" required>
                             <option value="">Selecione...</option>
                             <option value="AC">AC</option>
                             <option value="AL">AL</option>
@@ -70,9 +70,10 @@
                 </div>
                 <br>
                 <label for="documento-clienteform" id="label-documento">
-                    <select class="input-clienteform">
-                        <option>CPF</option>
-                        <option>CNPJ</option>
+                    <select class="input-clienteform" id="doctype-clienteform" name="doctype-clienteform">
+                        <option value="Docnull">...</option>
+                        <option value="CPF">CPF</option>
+                        <option value="CNPJ">CNPJ</option>
                     </select>
                     <span><input type="text" id="documento-clienteform" name="documento-clienteform" class="input-clienteform" autocomplete="off" required/></span>
                 </label>
@@ -101,6 +102,6 @@
 <!--Input Mask-->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.16/jquery.mask.js"></script>
 <!--Configurção do Input de Datas e N°-->
-<script src="{{ url_for('static', filename='js/cadastroCliente/input-ruler.js') }}"></script>
+<script src="{{ url_for('cliente.static', filename='js/input-ruler.js') }}"></script>
 <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
 {% endblock %}

@@ -1,0 +1,55 @@
+.form-container {
+    width: 98%;
+    margin: 0 auto;
+    padding: 20px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.input-produtoform {
+    margin-bottom: 15px;
+}
+.input-produtoform label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.form-fields {
+    width: 70%;
+    display: flex;
+    flex-direction: column;
+}
+
+.input-produtoform input,
+.input-produtoform textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+.input-produtoform textarea {
+    resize: vertical;
+}
+.input-produtoform input[type="file"] {
+    padding: 3px;
+}
+.input-produtoform button {
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    background-color: #ff0000;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    width: 100%;
+}
+
+main input:focus, textarea:focus {
+    outline: none;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+
+.input-produtoform button:hover {
+    background-color: #e42424;
+}

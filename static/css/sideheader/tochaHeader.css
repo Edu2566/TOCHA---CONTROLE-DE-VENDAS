@@ -174,9 +174,8 @@ header {
 /* Fim da estilização da Barra Lateral */
 
 /* Inicio da estilização da Área Principal */
-#vendasValidade_main, #vendaExtintores_main {
+main {
     align-items: center;
-    justify-content: center;
     display: flex;
     flex-direction: column;
     height: 90vh;
@@ -185,10 +184,10 @@ header {
     bottom: 0;
     right: 0;
     transition: all .5s;
-    border: 1px solid black;
+    background-color: #FAF0E6;   
 }
 
-#vendasValidade_main.close-sidebar, #vendaExtintores_main.close-sidebar {
+main.close-sidebar {
     width: calc(100% - 8vh);
 }
 /* Fim da estilização da Barra Lateral */

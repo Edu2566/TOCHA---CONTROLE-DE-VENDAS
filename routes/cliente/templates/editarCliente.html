@@ -70,21 +70,22 @@
             </div>
             <br>
             <label for="documento-clienteform" id="label-documento">
-                <select class="input-clienteform">
-                    <option>CPF</option>
-                    <option>CNPJ</option>
+                <select class="input-clienteform" id="doctype-clienteform" name="doctype-clienteform">
+                    <option value="Docnull">...</option>
+                    <option value="CPF" {% if cliente[7] == 'CPF' %}selected{% endif %}>CPF</option>
+                    <option value="CNPJ" {% if cliente[7] == 'CNPJ' %}selected{% endif %}>CNPJ</option>
                 </select>
-                <span><input type="text" id="documento-clienteform" name="documento-clienteform" class="input-clienteform" autocomplete="off" value="{{ cliente[7] }}" required/></span>
+                <span><input type="text" id="documento-clienteform" name="documento-clienteform" class="input-clienteform" autocomplete="off" value="{{ cliente[8] }}" required/></span>
             </label>
             <div id="linha-contato">
                 <label for="email-clienteform" id="label-email">
                     <span>E-Mail:</span>
-                    <input type="email" id="email-clienteform" class="input-clienteform" name="email-clienteform" autocomplete="off" value="{{ cliente[8] }}" required/>
+                    <input type="email" id="email-clienteform" class="input-clienteform" name="email-clienteform" autocomplete="off" value="{{ cliente[9] }}" required/>
                 </label>
 
                 <label for="fone-clienteform" id="label-fone">
                     <span>Fone:</span>
-                    <input type="tel" id="fone-clienteform" class="input-clienteform" name="fone-clienteform" autocomplete="off" inputmode="tel" placeholder="(00) 00000-0000" data-mask="(00) 00000-0000" value="{{ cliente[9] }}" />
+                    <input type="tel" id="fone-clienteform" class="input-clienteform" name="fone-clienteform" autocomplete="off" inputmode="tel" placeholder="(00) 00000-0000" data-mask="(00) 00000-0000" value="{{ cliente[10] }}" />
                 </label>
             </div>
             <br>
@@ -102,6 +103,6 @@
 <!--Input Mask-->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.16/jquery.mask.js"></script>
 <!--Configurção do Input de Datas e N°-->
-<script src="{{ url_for('static', filename='js/cadastroCliente/input-ruler.js') }}"></script>
+<script src="{{ url_for('cliente.static', filename='js/input-ruler.js') }}"></script>
 <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
 {% endblock %}

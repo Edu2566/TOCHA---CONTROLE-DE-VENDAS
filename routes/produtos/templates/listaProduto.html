@@ -1,0 +1,32 @@
+{% extends "sideheader.html" %}
+
+{% block stylepage %}<link rel="stylesheet" href="{{ url_for('produto.static', filename='/css/listaProduto.css') }}">{% endblock %}
+
+{% block classactiveestoque %}active{% endblock %}
+{% block main %}
+<main id="listaProduto_main">
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Nome</th>
+                <th>Preço</th>
+                <th>Quantidade</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for item in produto %}
+            <tr>
+                <td>{{ item[0] }}</td>
+                <td>{{ item[1] }}</td>
+                <td>{{ item[2] }}</td>
+                <td>{{ item[3] }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</main>
+{% endblock %}
+
+{% block scripts %}
+{% endblock %}

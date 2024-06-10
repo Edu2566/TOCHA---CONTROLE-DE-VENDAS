@@ -1,15 +1,12 @@
-from flask import Blueprint, render_template, request, redirect, url_for, jsonify
+from flask import Blueprint, render_template, request, redirect, url_for
 from flask_mysqldb import MySQL
-from dotenv import load_dotenv
-import os
 from database.dataValidation.inputValidation import *
-
-load_dotenv()
 
 cliente_blueprint = Blueprint('cliente', __name__, template_folder='templates', static_folder='static-cliente')
 
 mysql = MySQL()
 
+# Template e função de cadastro
 @cliente_blueprint.route('/cadastro-cliente')
 def cadastroCliente():
     return render_template('cadastroCliente.html')
@@ -23,6 +20,7 @@ def cadastrarCliente():
         cidade = request.form['cidade-clienteform']
         cep = request.form['cep-clienteform']
         estado = request.form['estado-clienteform']
+        doctype = request.form['doctype-clienteform']
         documento = request.form['documento-clienteform']
         email = request.form['email-clienteform']
         telefone = request.form['fone-clienteform']
@@ -43,10 +41,10 @@ def cadastrarCliente():
 
         try:
             sql = """
-                INSERT INTO clientes (nome, endereco, numero, cidade, cep, estado, documento, email, telefone)
-                VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s)
+                INSERT INTO clientes (nome, endereco, numero, cidade, cep, estado, doctype, documento, email, telefone)
+                VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s)
             """
-            cursor.execute(sql, (nome, endereco, numero, cidade, cep, estado, documento, email, telefone))
+            cursor.execute(sql, (nome, endereco, numero, cidade, cep, estado, doctype, documento, email, telefone))
             conn.commit()
 
             return redirect(url_for('cliente.cadastroCliente'))
@@ -60,6 +58,7 @@ def cadastrarCliente():
 
     return "Método GET não permitido para esta rota."
 
+#template e função de lista
 @cliente_blueprint.route('/lista-clientes')
 def listaClientes():
     conn = mysql.connection
@@ -75,6 +74,7 @@ def listaClientes():
 
     return render_template('listaClientes.html', clientes=clientes)
 
+#Função de deletar dado
 @cliente_blueprint.route('/deletar-cliente/<int:id>', methods=['POST'])
 def deletarCliente(id):
     conn = mysql.connection
@@ -90,6 +90,7 @@ def deletarCliente(id):
     finally:
         cursor.close()
 
+#Função e Template de Editar dados
 @cliente_blueprint.route('/editar-cliente/<int:id>', methods=['GET'])
 def editarCliente(id):
     conn = mysql.connection
@@ -116,6 +117,7 @@ def atualizarCliente(id):
         cidade = request.form['cidade-clienteform']
         cep = request.form['cep-clienteform']
         estado = request.form['estado-clienteform']
+        doctype = request.form['doctype-clienteform']
         documento = request.form['documento-clienteform']
         email = request.form['email-clienteform']
         telefone = request.form['fone-clienteform']
@@ -137,10 +139,10 @@ def atualizarCliente(id):
         try:
             sql = """
                 UPDATE clientes
-                SET nome = %s, endereco = %s, numero = %s, cidade = %s, cep = %s, estado = %s, documento = %s, email = %s, telefone = %s
+                SET nome = %s, endereco = %s, numero = %s, cidade = %s, cep = %s, estado = %s, doctype = %s, documento = %s, email = %s, telefone = %s
                 WHERE id = %s
             """
-            cursor.execute(sql, (nome, endereco, numero, cidade, cep, estado, documento, email, telefone, id))
+            cursor.execute(sql, (nome, endereco, numero, cidade, cep, estado, doctype, documento, email, telefone, id))
             conn.commit()
 
             return redirect(url_for('cliente.listaClientes'))

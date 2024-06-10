@@ -53,7 +53,7 @@
                 </a>
             </li>
             <li class="side-item {% block classactiveestoque %}{% endblock %}">
-                <a href="#">
+                <a href="{{url_for('produto.listaProduto')}}">
                     <i class="fa-solid fa-boxes-stacked"></i>
                     <span class="item-description">
                         Estoque
@@ -61,7 +61,7 @@
                 </a>
             </li>
             <li class="side-item {% block classactivecadastrarproduto %}{% endblock %}">
-                <a href="#">
+                <a href="{{url_for('produto.cadastroProduto')}}">
                     <i class="fa-solid fa-boxes-packing"></i>
                     <span class="item-description">
                         Cadastrar Produto
