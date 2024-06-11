@@ -1,6 +1,6 @@
 {% extends "sideheader.html" %}
 
-{% block stylepage %}<link rel="stylesheet" href="{{ url_for('produto.static', filename='/css/listaProduto.css') }}">{% endblock %}
+{% block stylepage %}<link rel="stylesheet" href="{{ url_for('static', filename='/css/listaStyle.css') }}">{% endblock %}
 
 {% block classactiveestoque %}active{% endblock %}
 {% block main %}
@@ -12,6 +12,7 @@
                 <th>Nome</th>
                 <th>Preço</th>
                 <th>Quantidade</th>
+                <th>Ações</th>
             </tr>
         </thead>
         <tbody>
@@ -21,6 +22,12 @@
                 <td>{{ item[1] }}</td>
                 <td>{{ item[2] }}</td>
                 <td>{{ item[3] }}</td>
+                <td>
+                    <a href="{{ url_for('produto.editarProduto', id_produto=item[0]) }}" class="list-btn">Editar</a>
+                    <form action="{{ url_for('produto.deletarProduto', id_produto=item[0]) }}" method="post" style="display:inline;">
+                        <button type="submit" class="list-btn">Deletar</button>
+                    </form>
+                </td>
             </tr>
             {% endfor %}
         </tbody>

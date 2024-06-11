@@ -1,0 +1,93 @@
+.form-container {
+    width: 98%;
+    margin: 0 auto;
+    padding: 20px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.input-produtoform {
+    margin-bottom: 15px;
+}
+.input-produtoform label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.form-fields {
+    width: 70%;
+    display: flex;
+    flex-direction: column;
+}
+
+.input-produtoform input,
+.input-produtoform textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+.input-produtoform textarea {
+    resize: vertical;
+}
+
+.input-produtoform button {
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    background-color: #ff0000;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    width: 100%;
+}
+
+main input:focus, textarea:focus {
+    outline: none;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+
+.input-produtoform button:hover {
+    background-color: #e42424;
+}
+
+#voltar-produtoform {
+    width: 20%; /* O botão ocupará toda a largura disponível */
+    padding: 10px;
+    background-color: #ff0000; /* Cor de fundo azul */
+    color: #fff; /* Cor do texto branco */
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+    text-align: center;
+    font-size: 14px;
+}
+
+#voltar-produtoform:hover {
+    background-color: #e42424; /* Cor de fundo mais escura ao passar o mouse */
+}
+
+#linha-botao {
+    display: flex;
+    justify-content: space-between;
+    cursor: default;
+}
+
+#enviar-produtoform {
+    width: 70%; /* O botão ocupará toda a largura disponível */
+    padding: 10px;
+    background-color: #ff0000; /* Cor de fundo azul */
+    color: #fff; /* Cor do texto branco */
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background-color 0.3s ease;
+}
+
+#enviar-produtoform:hover {
+    background-color: #e42424; /* Cor de fundo mais escura ao passar o mouse */
+}

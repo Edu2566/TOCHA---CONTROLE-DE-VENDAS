@@ -31,9 +31,7 @@
 .input-produtoform textarea {
     resize: vertical;
 }
-.input-produtoform input[type="file"] {
-    padding: 3px;
-}
+
 .input-produtoform button {
     padding: 10px 15px;
     border: none;
