@@ -1,4 +1,4 @@
-.input-clienteform {
+.input-customerform {
     width: 100%; 
     box-sizing: border-box; 
     padding: 10px; 
@@ -17,26 +17,22 @@ main select:focus {
     box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
 }
 
-#linha-endereco {
+#addres-line {
     display: grid;
     gap: 10px;
     grid-template-columns: 2fr 1fr; /* Divide a linha em duas colunas */
 }
 
-#linha-endereco2 {
+#address-line2 {
     display: grid;
     gap: 10px;
     grid-template-columns: 2fr 1fr 1fr; /* Divide a linha em três colunas */
 }
 
-#linha-contato {
+#contact-line {
     display: grid;
     gap: 10px;
     grid-template-columns: 2fr 1fr; /* Divide a linha em duas colunas */
-}
-
-#linha-botao {
-    text-align: center; /* Centraliza o botão */
 }
 
 /* Estilos específicos para labels e spans */
@@ -52,13 +48,14 @@ main span {
 
 /* Estilo para o botão */
 
-#linha-botao {
+#button-line {
     display: flex;
     justify-content: space-between;
     cursor: default;
+    text-align: center;
 }
 
-#enviar-clienteform {
+#submit-customerform {
     width: 70%; /* O botão ocupará toda a largura disponível */
     padding: 10px;
     background-color: #ff0000; /* Cor de fundo azul */
@@ -70,11 +67,11 @@ main span {
     transition: background-color 0.3s ease;
 }
 
-#enviar-clienteform:hover {
+#submit-customerform:hover {
     background-color: #e42424; /* Cor de fundo mais escura ao passar o mouse */
 }
 
-#voltar-clienteform {
+#back-customerform {
     width: 20%; /* O botão ocupará toda a largura disponível */
     padding: 10px;
     background-color: #ff0000; /* Cor de fundo azul */
@@ -87,12 +84,12 @@ main span {
     font-size: 14px;
 }
 
-#voltar-clienteform:hover {
+#back-customerform:hover {
     background-color: #e42424; /* Cor de fundo mais escura ao passar o mouse */
 }
 /* Estilos adicionados para o elemento dentro da label #label-documento */
 
-#label-documento {
+#label-document {
     display: flex;
     flex-direction: row;
     align-items: flex-start;
@@ -100,11 +97,11 @@ main span {
     width: 100%;
 }
 
-#label-documento select {
+#label-document select {
     width: 10%;
 }
 
-#label-documento span{
+#label-document span{
     width: 88%; /* Ocupa 30% da largura disponível */
     margin-right: 10px; /* Espaçamento à direita para separar do input */
 }

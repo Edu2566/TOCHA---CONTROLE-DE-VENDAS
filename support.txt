@@ -1,0 +1,94 @@
+@cliente_blueprint.route('/atualizar-cliente/<int:id>', methods=['POST'])
+def atualizarCliente(id):
+    if request.method == 'POST':
+        nome = request.form['cliente-clienteform']
+        endereco = request.form['endereco-clienteform']
+        numero = request.form['numero_endereco-clienteform']
+        cidade = request.form['cidade-clienteform']
+        cep = request.form['cep-clienteform']
+        estado = request.form['estado-clienteform']
+        doctype = request.form['doctype-clienteform']
+        documento = request.form['documento-clienteform']
+        email = request.form['email-clienteform']
+        telefone = request.form['fone-clienteform']
+        
+        # Realizar validações antes de atualizar no banco de dados
+        if not is_valid_cpf_or_cnpj(documento):
+            return "CPF/CNPJ inválido. Por favor, insira um CPF/CNPJ válido."
+
+        if not is_valid_cep(cep):
+            return "CEP inválido. Por favor, insira um CEP válido."
+
+        if not is_valid_telefone(telefone):
+            return "Telefone inválido. Por favor, insira um telefone válido."
+
+        # Se todas as validações passarem, atualizar no banco de dados
+        conn = mysql.connection
+        cursor = conn.cursor()
+
+        try:
+            sql = """
+                UPDATE clientes
+                SET nome = %s, endereco = %s, numero = %s, cidade = %s, cep = %s, estado = %s, doctype = %s, documento = %s, email = %s, telefone = %s
+                WHERE id = %s
+            """
+            cursor.execute(sql, (nome, endereco, numero, cidade, cep, estado, doctype, documento, email, telefone, id))
+            conn.commit()
+
+            return redirect(url_for('cliente.listaClientes'))
+
+        except Exception as e:
+            conn.rollback()
+            return f"Erro ao atualizar cliente: {str(e)}"
+
+        finally:
+            cursor.close()
+
+    return "Método GET não permitido para esta rota."
+
+@cliente_blueprint.route('/cadastrar-cliente', methods=['POST'])
+def cadastrarCliente():
+    if request.method == 'POST':
+        nome = request.form['cliente-clienteform']
+        endereco = request.form['endereco-clienteform']
+        numero = request.form['numero_endereco-clienteform']
+        cidade = request.form['cidade-clienteform']
+        cep = request.form['cep-clienteform']
+        estado = request.form['estado-clienteform']
+        doctype = request.form['doctype-clienteform']
+        documento = request.form['documento-clienteform']
+        email = request.form['email-clienteform']
+        telefone = request.form['fone-clienteform']
+        
+        # Realizar validações antes de inserir no banco de dados
+        if not is_valid_cpf_or_cnpj(documento):
+            return "CPF/CNPJ inválido. Por favor, insira um CPF/CNPJ válido."
+
+        if not is_valid_cep(cep):
+            return "CEP inválido. Por favor, insira um CEP válido."
+
+        if not is_valid_telefone(telefone):
+            return "Telefone inválido. Por favor, insira um telefone válido."
+
+        # Se todas as validações passarem, inserir no banco de dados
+        conn = mysql.connection
+        cursor = conn.cursor()
+
+        try:
+            sql = """
+                INSERT INTO clientes (nome, endereco, numero, cidade, cep, estado, doctype, documento, email, telefone)
+                VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s)
+            """
+            cursor.execute(sql, (nome, endereco, numero, cidade, cep, estado, doctype, documento, email, telefone))
+            conn.commit()
+
+            return redirect(url_for('cliente.cadastroCliente'))
+
+        except Exception as e:
+            conn.rollback()
+            return f"Erro ao cadastrar cliente: {str(e)}"
+
+        finally:
+            cursor.close()
+
+    return "Método GET não permitido para esta rota."

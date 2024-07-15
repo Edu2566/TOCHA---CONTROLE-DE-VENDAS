@@ -1,0 +1,33 @@
+.input-vendedorform {
+    width: 100%; 
+    box-sizing: border-box; 
+    padding: 10px; 
+    font-size: 16px; 
+    border: 1px solid #ccc; 
+    border-radius: 4px;
+}
+
+main input:focus {
+    outline: none;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+
+main select:focus {
+    outline: none;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+
+#enviar-vendedorform {
+    width: 100%; /* O botão ocupará toda a largura disponível */
+    padding: 10px;
+    background-color: #ff0000; /* Cor de fundo azul */
+    color: #fff; /* Cor do texto branco */
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#enviar-vendedorform:hover {
+    background-color: #e42424; /* Cor de fundo mais escura ao passar o mouse */
+}

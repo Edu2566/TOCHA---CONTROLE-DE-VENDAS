@@ -1,0 +1,22 @@
+{% extends "sideheader.html" %}
+
+{% block stylepage %}<link rel="stylesheet" href="{{ url_for('vendedores.static', filename='/css/cadastroVendedores.css') }}">{% endblock %}
+
+{% block classactivecadastrarvendedor %}active{% endblock %}
+
+{% block main %}
+    <main id="cadastroVendedores_main">
+        <div id="vendedor-TOCHA">
+            <form method="POST" action="{{url_for('vendedores.cadastrarVendedores')}}">
+                <label for="vendedor-vendedorform" id="label-vendedorform">
+                    <span>Nome do Vendedor</span>
+                    <input type="text" id="vendedor-vendedorform" class="input-vendedorform" name="vendedor-vendedorform" autocomplete="off" required/>
+                </label>
+                <input type="submit" value="Enviar" id="enviar-vendedorform" class="input-vendedorform"/>
+            </form>
+        </div>
+    </main>
+{% endblock %}
+
+{% block scripts %}
+{% endblock %}

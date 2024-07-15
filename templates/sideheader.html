@@ -4,9 +4,9 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="{{ url_for('static', filename='/css/sideheader/tochaHeader.css') }}">
-    {% block stylepage %}{% endblock %}
-    <title>{% block titlepage %}{% endblock %}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='/css/sideheader/tocha_header.css') }}">
+    {% block style_page %}{% endblock %}
+    <title>{% block title_page %}{% endblock %}</title>
 </head>
 <body>
     <header>
@@ -20,58 +20,74 @@
 
     <nav id="sidebar">
         <ul id="side-itens">
-            <li class="side-item {% block classactivevendasvalidade %}{% endblock %}">
-                <a href="{{url_for('vendas.vendasValidade')}}">
+            <li class="side-item {% block active_sale_validity %}{% endblock %}">
+                <a href="{{url_for('sales.list_sale')}}">
                     <i class="fa-solid fa-calendar-check"></i>
                     <span class="item-description">
-                        Vendas e Validade
+                        Vendas
                     </span>
                 </a>
             </li>
-                <li class="side-item {% block classactiveregistrarvendas %}{% endblock %}">
-                <a href="{{url_for('vendas.registrarVenda')}}">
+                <li class="side-item {% block active_register_sale %}{% endblock %}">
+                <a href="{{url_for('sales.register_sale')}}">
                     <i class="fa-solid fa-file-invoice-dollar"></i>
                     <span class="item-description">
                         Registrar Venda
                     </span>
                 </a>
             </li>
-            <li class="side-item {% block classactivelistaclientes %}{% endblock %}">
-                <a href="{{url_for('cliente.listaClientes')}}">
+            <li class="side-item {% block active_list_customers %}{% endblock %}">
+                <a href="{{url_for('customers.list_customers')}}">
                     <i class="fa-solid fa-users"></i>
                     <span class="item-description">
                         Clientes
                     </span>
                 </a>
             </li>
-            <li class="side-item {% block classactivecadastrocliente %}{% endblock %}">
-                <a href="{{url_for('cliente.cadastroCliente')}}">
+            <li class="side-item {% block active_register_customer %}{% endblock %}">
+                <a href="{{url_for('customer.register_customer')}}">
                     <i class="fa-solid fa-user-plus"></i>
                     <span class="item-description">
                         Cadastrar Cliente
                     </span>
                 </a>
             </li>
-            <li class="side-item {% block classactiveestoque %}{% endblock %}">
-                <a href="{{url_for('produto.listaProduto')}}">
+            <li class="side-item {% block active_list_products %}{% endblock %}">
+                <a href="{{url_for('product.list_products')}}">
                     <i class="fa-solid fa-boxes-stacked"></i>
                     <span class="item-description">
                         Estoque
                     </span>
                 </a>
             </li>
-            <li class="side-item {% block classactivecadastrarproduto %}{% endblock %}">
-                <a href="{{url_for('produto.cadastroProduto')}}">
+            <li class="side-item {% block active_register_product %}{% endblock %}">
+                <a href="{{url_for('product.register_product')}}">
                     <i class="fa-solid fa-boxes-packing"></i>
                     <span class="item-description">
                         Cadastrar Produto
                     </span>
                 </a>
             </li>
+            <li class="side-item {% block active_list_seller %}{% endblock %}">
+                <a href="{{url_for('sellers.list_sellers')}}">
+                    <i class="fa-solid fa-address-card"></i>
+                    <span class="item-description">
+                        Vendedores
+                    </span>
+                </a>
+            </li>
+            <li class="side-item {% block active_register_seller %}{% endblock %}">
+                <a href="{{url_for('sellers.register_seller')}}">
+                    <i class="fa-solid fa-user-tie"></i>
+                    <span class="item-description">
+                        Novo Vendedor
+                    </span>
+                </a>
+            </li>
         </ul>
 
         <ul id="side-itens-footer">
-            <li class="side-item {% block classactiveconfiguracoes %}{% endblock %}">
+            <li class="side-item {% block active_settings %}{% endblock %}">
                 <a href="#">
                     <i class="fa-solid fa-gear"></i>
                     <span class="item-description">

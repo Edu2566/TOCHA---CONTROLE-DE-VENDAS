@@ -1,42 +1,43 @@
 {% extends "sideheader.html" %}
 
 {% block stylepage %}<link rel="stylesheet" href="{{ url_for('cliente.static', filename='/css/cadastroCliente.css') }}">{% endblock %}
+{% block title_page %}Cadastrar Cliente{% endblock %}
 
-{% block classactivecadastrocliente %}active{% endblock %}
+{% block active_register_customer %}active{% endblock %}
 {% block main %}
     <main id="cadastroCliente_main">
         <div id="cliente-TOCHA">
-            <form method="POST" action="{{url_for('cliente.cadastrarCliente')}}" id="cliente-espaco">
-                <label for="cliente-clienteform" id="label-clienteform">
+            <form method="POST" action="{{url_for('cliente.cadastrarCliente')}}" id="customer-space">
+                <label for="customer-customerform" id="label-customerform">
                     <span>Cliente:</span>
-                    <input type="text" id="cliente-clienteform" class="input-clienteform" name="cliente-clienteform" autocomplete="off" required/>
+                    <input type="text" id="customer-customerform" class="input-customerform" name="customer-customerform" autocomplete="off" required/>
                 </label>
 
-                <div id="linha-endereco">
-                    <label for="endereco-clienteform" id="label-endereco">
+                <div id="address-line">
+                    <label for="address-customerform" id="label-address">
                         <span>Endereço:</span>
-                        <input type="text"  id="endereco-clienteform" class="input-clienteform" name="endereco-clienteform" autocomplete="off" required/>
+                        <input type="text"  id="address-customerform" class="input-customerform" name="address-customerform" autocomplete="off" required/>
                     </label>
-                    <label for="numero_endereco-clienteform" id="label-numero_endereco">
-                        <span>N°:</span>
-                        <input type="text"  id="numero_endereco-clienteform" class="input-clienteform" name="numero_endereco-clienteform" autocomplete="off" required/>
+                    <label for="address_number-customerform" id="label-address_number">
+                        <span>Número:</span>
+                        <input type="text"  id="address_number-customerform" class="input-customerform" name="address_number-customerform" autocomplete="off" required/>
                     </label>
                 </div>
 
-                <div id="linha-endereco2">
-                    <label for="cidade-clienteform" id="label-cidade">
+                <div id="address-line2">
+                    <label for="city-customerform" id="label-city">
                         <span>Cidade:</span>
-                        <input type="text" id="cidade-clienteform" name="cidade-clienteform" autocomplete="off" class="input-clienteform" required/>
+                        <input type="text" id="city-customerform" name="city-customerform" autocomplete="off" class="input-customerform" required/>
                     </label>
 
-                    <label for="cep-clienteform" id="label-cep">
+                    <label for="postal_code-customerform" id="label-postal_code">
                         <span>CEP:</span>
-                        <input type="text" id="cep-clienteform" name="cep-clienteform" autocomplete="off" class="input-clienteform" placeholder="00000-000" data-mask="00000-000" required/>
+                        <input type="text" id="postal_code-customerform" name="postal_code-customerform" autocomplete="off" class="input-customerform" placeholder="00000-000" data-mask="00000-000" required/>
                     </label>
 
-                    <label for="estado-clienteform" id="label-estado">
+                    <label for="state-customerform" id="label-state">
                         <span>Estado:</span>
-                        <select name="estado-clienteform" id="estado-clienteform" class="input-clienteform" required>
+                        <select name="state-customerform" id="state-customerform" class="input-customerform" required>
                             <option value="">Selecione...</option>
                             <option value="AC">AC</option>
                             <option value="AL">AL</option>
@@ -69,39 +70,39 @@
                     </label>
                 </div>
                 <br>
-                <label for="documento-clienteform" id="label-documento">
-                    <select class="input-clienteform" id="doctype-clienteform" name="doctype-clienteform">
+                <label for="document-customerform" id="label-document">
+                    <select class="input-customerform" id="doctype-customerform" name="doctype-customerform">
                         <option value="Docnull">...</option>
                         <option value="CPF">CPF</option>
                         <option value="CNPJ">CNPJ</option>
                     </select>
-                    <span><input type="text" id="documento-clienteform" name="documento-clienteform" class="input-clienteform" autocomplete="off" required/></span>
+                    <span><input type="text" id="document-customerform" name="document-customerform" class="input-customerform" autocomplete="off" required/></span>
                 </label>
-                <div id="linha-contato">
-                    <label for="email-clienteform" id="label-email">
+                <div id="contact-line">
+                    <label for="email-customerform" id="label-email">
                         <span>E-Mail:</span>
-                        <input type="email" id="email-clienteform" class="input-clienteform" name="email-clienteform" autocomplete="off" required/>
+                        <input type="email" id="email-customerform" class="input-customerform" name="email-customerform" autocomplete="off" required/>
                     </label>
 
-                    <label for="fone-clienteform" id="label-fone">
-                        <span>Fone:</span>
-                        <input type="tel" id="fone-clienteform" class="input-clienteform" name="fone-clienteform" autocomplete="off" inputmode="tel" placeholder="(00) 00000-0000" data-mask="(00) 00000-0000"/>
+                    <label for="phone-customerform" id="label-phone">
+                        <span>Telefone:</span>
+                        <input type="tel" id="phone-customerform" class="input-customerform" name="phone-customerform" autocomplete="off" inputmode="tel" placeholder="(00) 00000-0000" data-mask="(00) 00000-0000"/>
                     </label>
                 </div>
                 <br>
-                <div id="linha-botao">
-                    <input type="submit" value="Enviar" id="enviar-clienteform" class="input-clienteform"/>
+                <div id="button-line">
+                    <input type="submit" value="Enviar" id="submit-customerform" class="input-customerform"/>
                 </div>
             </form>
         </div>
     </main>
 {% endblock %}
 {% block scripts %}
-<!--Importações jQuery-->
+<!-- jQuery Imports -->
 <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
-<!--Input Mask-->
+<!-- Input Mask -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.16/jquery.mask.js"></script>
-<!--Configurção do Input de Datas e N°-->
-<script src="{{ url_for('cliente.static', filename='js/input-ruler.js') }}"></script>
+<!-- Input Date and Number -->
+<script src="{{ url_for('cliente.static', filename='js/input-rules.js') }}"></script>
 <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
 {% endblock %}
